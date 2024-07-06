@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+public class MainTema3 {
+    public static void main(String[] args) {
+        Scanner exercitiu = new Scanner(System.in);
+        System.out.println("Introduceti numarul exercitiului de la 1 la 6: ");
+        int selectieexercitiu = exercitiu.nextInt();
+
+        switch(selectieexercitiu){
+            case 1:
+                //Exercises 1 : convert Fahrenheit to Celsius. Read the temperature from keyboard
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduceti valoarea Fahrenheit: ");
+                double Fahr = scan.nextDouble();
+                double celsius;
+                celsius = (Fahr - 32) * 5 / 9;
+                System.out.println("Conversia din Fahrenheit in Celsius este: " + celsius);
+                scan.close();
+                break;
+            case 2:
+                //Exercises 2 : swap two values without using 3 variable. a and b will be read from keyboard
+                Scanner scan2 = new Scanner(System.in);
+                System.out.println("introduceti valoarea pentru a: ");
+                int a = scan2.nextInt();
+                System.out.println("introduceti valoarea pentru b: ");
+                int b = scan2.nextInt();
+                //inversarea variabilelor matematic
+                a = a + b;
+                b = a - b;
+                a = a - b;
+                System.out.println("S-a realizat conversia");
+                System.out.println("valoarea curenta pentru a este: " + a);
+                System.out.println("valoarea curenta pentru b este: " + b);
+                scan2.close();
+                break;
+            case 3:
+                //Exercises 3: How to swap two values using 3rd variable: a and b will be read from keyboard
+                Scanner citire = new Scanner(System.in);
+                System.out.println("introduceti valoarea pentru a: ");
+                int var1 = citire.nextInt();
+                System.out.println("introduceti valoarea pentru b: ");
+                int var2 = citire.nextInt();
+                int var3;
+                var3 = var1;
+                var1 = var2;
+                var2 = var3;
+                System.out.println("Valoarea noua lui a: " + var1);
+                System.out.println("Valoarea noua lui b: " + var2);
+                citire.close();
+                break;
+            case 4:
+                //Exercises 4 : How to swap check Odd and Even number: a and b will be read from keyboard
+                Scanner citire4 = new Scanner(System.in);
+                System.out.println("introduceti valoarea pentru a: ");
+                int numar1 = citire4.nextInt();
+                System.out.println("introduceti valoarea pentru b: ");
+                int numar2 = citire4.nextInt();
+                if (numar1 % 2 == 0) {
+                    System.out.println("Numarul " + numar1 + " este par ");
+                } else {
+                    System.out.println("Numarul " + numar1 + " este impar ");
+                }
+                if (numar2 % 2 == 0) {
+                    System.out.println("Numarul " + numar2 + " este par ");
+                } else {
+                    System.out.println("Numarul " + numar2 + " este impar ");
+                }
+                citire4.close();
+                break;
+            case 5:
+                // Exercises 5: A number is given from keyboard, calculate factorial
+                // n! = n*(n-1)*(n-2)*..*(n-1)
+                Scanner citire5 = new Scanner(System.in);
+                System.out.println("introduceti numarul: ");
+                int numar = citire5.nextInt();
+                int numarFactorial = 1;
+                //ciclul pentru inmultire pana la numarul introdus
+                for (int i = 1; i <= numar; ++i) {
+                    numarFactorial *= i;
+                }
+                System.out.println(numar + "! este: " + numarFactorial);
+                citire5.close();
+                break;
+            case 6:
+                //Exercises 6 : Check if two strings are equals and compare them.
+                //Use Scanner to takes the strings values
+                Scanner citire6 = new Scanner(System.in);
+                System.out.println("introduceti primul text: ");
+                String string1 = citire6.nextLine();
+                System.out.println("introduceti al doilea text: ");
+                String string2 = citire6.nextLine();
+                if (string1.equals(string2))
+                    System.out.println("Textele introduse sunt egale");
+                else
+                    System.out.println("Textele introduse nu sunt egale");
+                citire6.close();
+                break;
+            default:
+                System.out.println("Nu ai selectat un numar corect");
+
+        }
+
+    }
+}

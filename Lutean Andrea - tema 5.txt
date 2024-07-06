@@ -1,0 +1,119 @@
+//clasa Carte
+
+package teme.GestionareBiblioteca;
+
+public abstract class Carte {
+    // intrebari:
+// daca nu scriu nimic intre String si variabila, e automat public?? vezi randul de sub acest comentariu
+    String titlu;
+    String autor;
+
+    //contructor explicit
+    public Carte(String titlu, String autor) {
+        this.titlu = titlu;
+        this.autor = autor;
+    }
+
+    //metoda abstracta fara implementare corp
+    public abstract void afisareDetalii();
+}
+
+
+
+----------
+//clasa CarteFizica
+
+package teme.GestionareBiblioteca;
+
+public class CarteFizica extends Carte{
+    int numarPagini;
+
+    //contructor explicit
+    public CarteFizica(String titlu, String autor, int numarPagini) {
+        //apelam variabilele titlu si autor din clasa Carte
+        super(titlu, autor);
+        this.numarPagini = numarPagini;
+    }
+
+    //suprascriere afisareDetalii() din clasa Carte
+    @Override
+    public void afisareDetalii() {
+        System.out.println("Carte fizica: " + titlu + " de " + autor + ", " + numarPagini + " pagini");
+    }
+}
+
+
+
+------------
+// clasa CarteElectronica
+
+package teme.GestionareBiblioteca;
+
+public class CarteElectronica extends Carte{
+    double dimensiuneFisier;
+
+    public CarteElectronica(String titlu, String autor, double dimensiuneFisier) {
+        //apelam variabilele titlu si autor din clasa Carte
+        super(titlu, autor);
+        this.dimensiuneFisier = dimensiuneFisier;
+    }
+
+    //suprascriere metoda afisareDetalii() din clasa parinte Carte
+    @Override
+    public void afisareDetalii() {
+        System.out.println("Carte electronica: " + titlu + " de " + autor + ", " + dimensiuneFisier + " MB");
+    }
+}
+
+
+
+
+----------
+
+//clasa Biblioteca
+
+package teme.GestionareBiblioteca;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Biblioteca {
+    List<Carte> listaCarti = new ArrayList<Carte>();
+
+    public void adaugaCarte(Carte carte) {
+        listaCarti.add(carte);
+    }
+
+    //afisare cu foreach
+    public void afisareDetaliiToateCartile() {
+        for (Carte carte : listaCarti) {
+            carte.afisareDetalii();
+        }
+    }
+}
+
+
+
+
+--------
+
+// Main
+
+package teme.GestionareBiblioteca;
+
+public class Main {
+    public static void main(String[] args) {
+        //instanta a clasei Biblioteca
+        Biblioteca biblioteca = new Biblioteca();
+
+        // creare obiect
+        CarteFizica carteFizica = new CarteFizica("Fizica povestita", "Cristian Presura", 300);
+        CarteElectronica carteElectronica = new CarteElectronica("Introducere in programare cu Java", "Ramon Nastase", 2.5);
+        //adaugare carte in biblioteca
+        biblioteca.adaugaCarte(carteFizica);
+        biblioteca.adaugaCarte(carteElectronica);
+
+        biblioteca.afisareDetaliiToateCartile();
+    }
+}
+

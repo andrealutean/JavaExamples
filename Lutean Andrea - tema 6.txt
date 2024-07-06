@@ -1,0 +1,61 @@
+$ git init
+Initialized empty Git repository in C:/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea/.git/
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (master)
+$ git add .
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (master)
+$ git commit -m "toate temele"
+[master (root-commit) c56acf1] toate temele
+ 9 files changed, 471 insertions(+)
+ create mode 100644 GestionareBiblioteca/Biblioteca.java
+ create mode 100644 GestionareBiblioteca/Carte.java
+ create mode 100644 GestionareBiblioteca/CarteElectronica.java
+ create mode 100644 GestionareBiblioteca/CarteFizica.java
+ create mode 100644 GestionareBiblioteca/Main.java
+ create mode 100644 MainTema1.java
+ create mode 100644 MainTema2.java
+ create mode 100644 MainTema3.java
+ create mode 100644 MainTema4.java
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (master)
+$ git checkout -b UpdateCode
+Switched to a new branch 'UpdateCode'
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (UpdateCode)
+$ git add .
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (UpdateCode)
+$ git commit -m "update code random"
+[UpdateCode d19dfee] update code random
+ 1 file changed, 1 insertion(+)
+ create mode 100644 random.txt
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (UpdateCode)
+$ git status
+On branch UpdateCode
+nothing to commit, working tree clean
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (UpdateCode)
+$ git checkout master
+Switched to branch 'master'
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (master)
+$ git merge UpdateCode master
+Updating c56acf1..d19dfee
+Fast-forward
+ random.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 random.txt
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Acer@DESKTOP-M94R2VR MINGW64 /c/rec/qa manual & automat testing/Luna 2 - Automation/git tema/Lutean Andrea (master)

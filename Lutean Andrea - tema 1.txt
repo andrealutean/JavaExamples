@@ -1,0 +1,37 @@
+public class Main {
+    public static void main(String[] args) {
+        //Faceti un program care sa aiba 5 variabile de tip intreg(integer) 3 dintre ele sa fie pozitive si 2 negative
+        //Si alte 5 variabile sa fie numere peste 1000
+        //1. Sa se calculeze si afiseze suma primelor 5 numere
+        //2. Sa se calculeze si afiseze produsul sumei primelor 5 numere si diferentei dintre urmatoarele 5 numere
+        //3. Sa se calculeze si afiseze media aritmetica a tuturor numerelor.
+        //4. Sa se calculeze si afiseze media aritmetica a numerelor negative
+        //Rezultatul la punctul 1 este:
+
+        int nr1=5;
+        int nr2=3 ;
+        int nr3=2;
+        int nr4=-4;
+        int nr5=-6;
+        int nr6=1100;
+        int nr7=1005 ;
+        int nr8=1140;
+        int nr9=2000;
+        int nr10=2700;
+        int suma ;
+        suma = nr1+nr2+nr3+nr4+nr5;
+        System.out.printf("Rezultatul la punctul 1 este: "+suma +"\n");
+        int primele5 = nr1+nr2+nr3+nr4+nr5;
+        int ultimele5 = nr6-nr7-nr8-nr9-nr10;
+        int produs;
+        produs = primele5*ultimele5;
+        System.out.printf("Rezultatul la punctul 2 este: " + produs +"\n");
+        int mediaaritmetica;
+        mediaaritmetica = (nr1+nr2+nr3+nr4+nr5+nr6+nr7+nr8+nr9+nr10)/10;
+        System.out.printf("Rezultatul la punctul 3 este: " + mediaaritmetica + "\n");
+        int mediaaritmetica2;
+        mediaaritmetica2 = (nr4+nr5)/2;
+        System.out.printf("Rezultatul la punctul 4 este: " + mediaaritmetica2 + "\n");
+    }
+}
+

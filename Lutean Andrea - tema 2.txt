@@ -1,0 +1,83 @@
+public class MainTema2 {
+    public static void main(String[] args) {
+        // Ana are 24 de ani. Fratele ei, David, e cu 6 ani mai mic.
+        // Scrieti un program care afiseaza varsta lui David.
+        varstaDavid();
+
+
+       /*Exercitiul 2: Scrieti un program care contine 4 metode, 2 de tip void, una sa fie de tip String si alta de tip int.
+        -Cele void sa contina variabile locale de tipul: int/double/float, variabile care vor fi initializate
+        cu valorile primite ca si parametru de catre functie si sa le afiseze.
+        - Metoda string sa primeasca 5 parametrii de tip string si sa returneze un singur string compus din cei 5 parametrii.
+        - Metoda int de primeasca 3 parametrii de tipul int/double/float si verifice care numar este par si care
+        este impar si sa returneze suma dintre 1 numar par si unul impar.
+*/
+        AfisareParametriPrimiti(5, 23.5, (float) -5.5);
+        AfisareParametriPrimitiDouble(40.5, -41.6, -17.5);
+        String cuvantcompus = CuvantCompus("Ana ", "are ", "mere ", "foarte ", "dulci");
+        System.out.println(cuvantcompus);
+        int numarparcuimpar = AdunareNumarPar(1, 5, 6);
+        System.out.println("Suma dintre un numar par si un numar impar primit este: " + numarparcuimpar);
+
+    }
+
+    //calculam varsta lui David
+    public static void varstaDavid() {
+        int ana = 24;
+        int david;
+        david = ana - 6;
+        System.out.println("Varsta lui David este: " + david);
+    }
+
+    //afisam valorile locale primite ca si parametru
+    public static void AfisareParametriPrimiti(int nr1, double nr2, float nr3) {
+        int numarnou1 = nr1;
+        System.out.println(numarnou1);
+        double numarnou2 = nr2;
+        System.out.println(numarnou2);
+        float numarnou3 = nr3;
+        System.out.println(numarnou3);
+    }
+
+    //afisam valorile locale primite ca si parametru
+    public static void AfisareParametriPrimitiDouble(double nr1, double nr2, double nr3) {
+        double numarnou1 = nr1;
+        System.out.println(numarnou1);
+        double numarnou2 = nr2;
+        System.out.println(numarnou2);
+        double numarnou3 = nr3;
+        System.out.println(numarnou3);
+    }
+
+    public static String CuvantCompus(String cuvant1, String cuvant2, String cuvant3, String cuvant4, String cuvant5) {
+        String propozitie;
+        propozitie = cuvant1 + cuvant2 + cuvant3 + cuvant4 + cuvant5;
+        return propozitie;
+    }
+
+    //verificare numar primit daca este impar si adunam cu un numar impar
+    public static int AdunareNumarPar(int nr1, int nr2, int nr3) {
+        int numarimpar = 0;
+        int numarpar = 0;
+        int numaradunat = 0;
+        //verificare nr1 daca este par
+        if (nr1 % 2 == 0) {
+            numarpar = nr1;
+        } else numarimpar = nr1;
+        //verificare nr2 daca este par
+        if (nr2 % 2 == 0) {
+            numarpar = nr2;
+        } else numarimpar = nr2;
+        //verificare nr3 daca este par
+        if (nr3 % 2 == 0) {
+            numarpar = nr3;
+        } else numarimpar = nr3;
+
+        numaradunat = numarpar + numarimpar;
+        return numaradunat;
+
+    }
+
+}
+
+

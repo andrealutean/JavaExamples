@@ -1,0 +1,106 @@
+import com.sun.security.jgss.GSSUtil;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class MainTema4 {
+    public static void main(String[] args) {
+        Scanner exercitiu = new Scanner(System.in);
+        //meniu selectie exercitiu
+        System.out.println("Introduceti numarul exercitiului de la 1 la 3: ");
+        System.out.println("1. Operatiuni matematice cu 2 numere \n" + "2. Initiere un array de 2 dimensiuni \n"+"3. Afisare tot al doilea element dintr-un sir de tip char");
+        int selectieexercitiu = exercitiu.nextInt();
+
+        switch (selectieexercitiu) {
+
+            case 1:{
+                /*  Citit un caracter si 2 numere de la tastatura, si stocati-le in variabile.
+            Folosind structura switch, daca s-a introdus un caracter anume, realizati operatia
+            respectiva cu cele 2 numere, si afisati rezultatul pe ecran:-‘a’: adaugare-‘s’: scadere-
+           ‘i’: inmultire-‘p’: impartire-‘m’: modulDaca nu s-a introdus un caracter valid, afisati un mesaj de eroare*/
+
+
+                //meniu pentru selectie operatiuni
+                System.out.println("Introduceti optiunea dorita: ");
+                System.out.println("‘a’: adaugare \n" + "‘s’: scadere \n" + "'i’: inmultire \n" + "‘p’: impartire \n" );
+
+                // citire de la tastatura pentru optiune
+                char sel = exercitiu.next().charAt(0);
+
+                //citerea celor 2 numere
+                System.out.println("Introduceti primul numar: ");
+                double numar1 = exercitiu.nextDouble();
+                System.out.println("Introduceti al doilea numar: ");
+                double numar2 = exercitiu.nextDouble();
+                //conversie string to char
+               // char selectie = sel.charAt(0);
+
+                switch (sel)
+                {
+                    case 'a':{
+                        double adaugare = numar1+numar2;
+                        System.out.println("Suma celor doua numere: "+adaugare);
+                    break;
+                    }
+                    case 's':{
+                        double scadere = numar1-numar2;
+                        System.out.println("Diferenta celor doua numere: "+scadere);
+                    break;
+                    }
+                    case 'i':{
+                        double inmultire = numar1*numar2;
+                        System.out.println("Inmultirea celor doua numere: "+inmultire);
+                        break;
+                    }
+                    case 'p':{
+                        double impartire = numar1/numar2;
+                        System.out.println("Impartirea celor doua numere: "+impartire);
+                        break;
+                    }
+                    default:{
+                        System.out.println("Nu ati introdus o optiune valida, selecteaza a, s, i sau p");
+                        break;
+                    }
+
+                }
+                break;
+            }
+            case 2: {
+               /* Definiti un array de 2 dimensiuni, fiecare dimensiune sa aiba cate 3, respectiv 5 elemente.
+                    Initializati array-ul. Afisati primele si ultimele elemente din fiecare dimensiune pe ecran.*/
+
+                int[][] array2D = new int[3][5];
+                //initializare cu numere random
+                for (int i=0; i < 3; i++){
+                    for (int j=0;j<5;j++){
+                        Random numarrandom = new Random();
+                        int numargeneratrandom = numarrandom.nextInt(1,100);
+                        array2D[i][j]=numargeneratrandom;
+                    }
+                }
+
+               /* // afisare tot sirul de elemente pentru verificare
+                for(int i=0; i < 3; i++){
+                    for(int j=0;j<5;j++){
+                        System.out.print( array2D[i][j] + " ");
+                    }
+                }*/
+
+                System.out.println("Primul element: " + array2D[0][0]);
+                System.out.println("Ultimul element:" + array2D[2][4]);
+                break;
+
+            }
+            case 3:{
+                char[] charArray = {'a','b','c','d','e','f','g','h','i','j','k','l','m'};
+                for (int j=1;j<charArray.length;j=j+2){
+                    System.out.printf(charArray[j]+" ");
+                }
+                break;
+            }
+            default:
+                System.out.println("Nu ai selectat un numar corect. Selecteaza un numar intre 1 si 3");
+        }
+        exercitiu.close();
+    }
+}
